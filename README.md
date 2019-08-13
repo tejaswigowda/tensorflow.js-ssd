@@ -1,6 +1,5 @@
 # tensorflow.js ssd (In-browser js only)
 
-<iframe src='https://tejaswigowda.github.io/tensorflow.js-ssd/webcam/'> </iframe>
 ## Usage
 
 1. cd to needed folder (`image/` or `webcam/`)
