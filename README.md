@@ -1,4 +1,5 @@
-# tensorflow.js-ssd
+# tensorflow.js ssd (In-browser js only)
+
 
 ## Usage
 
