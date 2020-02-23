@@ -19,15 +19,15 @@
 
   </head>
 
-  <body style='margin:0'>
+  <body style='margin:0;background:black;color:white;overflow:hidden'>
 
     <!-- Navigation -->
     <!-- Page Header -->
     <header class="">
             <div class="div" id="result" style='transform: translate(-50%, -50%);top: 50%;left: 50%;position: absolute;'>
               <img style="width:100%; display: none" id="img" src="" alt="Image Preview ..."/>
-              <canvas id="canvas"> </canvas>   
-            </div>
+              <canvas style='z-index:2' id="canvas"> </canvas>   
+            </div style='z-index:6'>
             <video id="video" style="display:none" width="" height=""></video>       
        <div style='width:100vw;text-align:center;position:fixed;bottom:0'>
             <input type='checkbox' id='modelToggle' onchange='toggleModel()'/> 

@@ -123,10 +123,14 @@ function close_stream(){
 function detectFrame() {
     const c = document.getElementById("canvas");
     const ctx = c.getContext("2d");
-    c.width = 700;
-    c.height = 500;
+    c.width = video.videoWidth;
+    c.height = video.videoHeight;
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     ctx.drawImage(video, 0, 0, ctx.canvas.width, ctx.canvas.height);
+
+
+    document.getElementById("result").style.transform = "translate(-50%,-50%) scale(" +  window.innerWidth/canvas.width + ")"
+
   if(model && modelOn){
     model.detect(video).then(predictions => {
             drawVideoPredictions(predictions, c)
