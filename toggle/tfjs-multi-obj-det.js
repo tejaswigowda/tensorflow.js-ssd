@@ -2,13 +2,29 @@ var model
 var modelOn = false;
 load_webcam();
 
+function toggleModel()
+{
+  var flag = document.getElementById("modelToggle").checked
+  if(!model){
+    loadModel();
+    return;
+  }
+  if(flag){
+    modelOn = true;
+  }
+  else{
+    modelOn = false;
+  }
+}
+
 function loadModel(){
   console.log('loading coco-ssd model...')
+      $("#modelStatus").html("Loading Model ...");
   cocoSsd.load().then(function(res){
-      $("#canvasl").remove();
       model = res
       console.log('done')
     modelOn = true;
+      $("#modelStatus").html("Classified Model Loaded");
   },function(){
       //failure
       console.log('loading tf model failed')

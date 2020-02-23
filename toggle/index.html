@@ -29,7 +29,11 @@
               <canvas id="canvas"> </canvas>   
             </div>
             <video id="video" style="display:none" width="700" height="500"></video>       
-              <h1 id="canvasl" style='text-align:center'> LOADING MODEL...<br> Please wait</h1>   
+       <div style='width:100vw;text-align:center;position:fixed;bottom:0'>
+            <input type='checkbox' id='modelToggle' onchange='toggleModel()'/> 
+            <label for='modelToggle'>Object Detection</label>
+          <div style='text-align:center;text-transform:uppercase' id='modelStatus'> Classifier not loaded </div>   
+       </div>
     </header>
 
 
