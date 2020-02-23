@@ -126,7 +126,7 @@ function detectFrame() {
     c.width = 700;
     c.height = 500;
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.drawImage(document.getElementById("video"), 0, 0, ctx.canvas.width, ctx.canvas.height);
+    ctx.drawImage(video, 0, 0, ctx.canvas.width, ctx.canvas.height);
   if(model && modelOn){
     model.detect(video).then(predictions => {
             drawVideoPredictions(predictions, c)
@@ -150,8 +150,8 @@ function load_webcam(){
         audio: false,
         video: {
           facingMode: "user",
-          width: 700,
-          height: 500
+          width: video.videoWidth,
+          height: video.videoHeight
         }
       })
       .then(stream => {
