@@ -96,6 +96,7 @@ function drawVideoPredictions(predictions, c){
     });
 
     predictions.forEach(prediction => {
+      console.log(prediction);
       const x = prediction.bbox[0];
       const y = prediction.bbox[1];
       // Draw the text last to ensure it's on top.
@@ -129,7 +130,13 @@ function detectFrame() {
     ctx.drawImage(video, 0, 0, ctx.canvas.width, ctx.canvas.height);
 
 
-    document.getElementById("result").style.transform = "translate(-50%,-50%) scale(" +  window.innerWidth/canvas.width + ")"
+    var fh = window.innerWidth/canvas.width * canvas.height;
+    if(fh > window.innerHeight){
+      document.getElementById("result").style.transform = "translate(-50%,-50%) scale(" +  window.innerHeight/canvas.height+ ")"
+    }
+    else{
+      document.getElementById("result").style.transform = "translate(-50%,-50%) scale(" +  window.innerWidth/canvas.width + ")"
+    }
 
   if(model && modelOn){
     model.detect(video).then(predictions => {
